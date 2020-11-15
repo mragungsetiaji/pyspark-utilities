@@ -30,4 +30,9 @@ jobs:
         run: poetry --help
       - name: build
         run: poetry build
+      - name: publish
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.USERNAME }}
+        run: poetry publish --username $USERNAME --password $PASSWORD
       
