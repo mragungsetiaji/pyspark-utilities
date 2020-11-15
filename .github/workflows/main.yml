@@ -5,8 +5,9 @@ name: CI
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
 on:
-  pull_request:
-    branches: [ main ]
+  push:
+    branches:
+      - master
 
 jobs:
   ci:
@@ -33,6 +34,6 @@ jobs:
       - name: publish
         env:
           USERNAME: ${{ secrets.USERNAME }}
-          PASSWORD: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         run: poetry publish --username $USERNAME --password $PASSWORD
       
