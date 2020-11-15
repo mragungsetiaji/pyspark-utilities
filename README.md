@@ -1,6 +1,6 @@
 # pyspark-utilities
 
-ETL-focused utilities library for PySpark
+ETL-focused utilities library for PySpark.
 
 ## Package Contents
 * `hdfs_utilities` - Base utilities to interact with HDFS file
