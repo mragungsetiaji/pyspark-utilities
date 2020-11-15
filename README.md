@@ -9,6 +9,6 @@ ETL-focused utilities library for PySpark
 ## Setup
 1. Install library  
     ```bash
-    pip install git+https://github.com/mragungsetiaji/pyspark-utilities
+    pip install pykg-spark
     ```
 
