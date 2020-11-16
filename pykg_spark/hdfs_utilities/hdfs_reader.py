@@ -1,4 +1,7 @@
 import pandas as pd
+from pyspark.sql import SparkSession
+
+
 
 def pd_read_map(map_csv_path, delimiter=";"):
     """ Read mapping csv from hdfs as dict, consist of source (string to replace)
@@ -22,6 +25,8 @@ def pd_read_map(map_csv_path, delimiter=";"):
         Return:
             Mapping dictionary
     """
+    # APP
+    spark = SparkSession.builder.appName("pd_read_map").getOrCreate()
     mapx = spark.read.option("delimiter", delimiter)\
                      .option("header",True)\
                      .csv(map_csv_path)
