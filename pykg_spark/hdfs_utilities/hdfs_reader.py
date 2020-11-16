@@ -23,7 +23,7 @@ def pd_read_map(map_csv_path, delimiter=";"):
             Mapping dictionary
     """
     mapx = spark.read.option("delimiter", delimiter)\
-                     .option("header",True)
+                     .option("header",True)\
                      .csv(map_csv_path)
     mapx = pd.Series(
         mapx.toPandas().source.values,
