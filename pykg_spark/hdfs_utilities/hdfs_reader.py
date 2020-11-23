@@ -31,8 +31,8 @@ def pd_read_map(map_csv_path, delimiter=";"):
                      .option("header",True)\
                      .csv(map_csv_path)
     mapx = pd.Series(
-        mapx.toPandas().source.values,
-        index=mapx.toPandas().destination
+        mapx.toPandas().destionation.values,
+        index=mapx.toPandas().source
     ).to_dict()
 
     return spark.sparkContext.broadcast(mapx)   
