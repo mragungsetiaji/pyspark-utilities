@@ -31,7 +31,7 @@ def pd_read_map(map_csv_path, delimiter=";"):
                      .option("header",True)\
                      .csv(map_csv_path)
     mapx = pd.Series(
-        mapx.toPandas().destionation.values,
+        mapx.toPandas().destination.values,
         index=mapx.toPandas().source
     ).to_dict()
 
